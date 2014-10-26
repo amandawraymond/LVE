@@ -1,0 +1,1 @@
+LVE, local venue entertainment, is an application that will allow a user to search local concerts by artist and location and save them their favorites concerts.
