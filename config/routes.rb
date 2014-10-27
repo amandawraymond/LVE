@@ -10,10 +10,8 @@ Rails.application.routes.draw do
   
 
 
-  get 'users/create'
-
-  get 'users/show'
-
+ 
+  resources :users
   
 
   # resources :users, only: [:create, :show]
