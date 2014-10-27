@@ -1,7 +1,3 @@
-require 'github/markup'
-GitHub::Markup.render(file, File.read(file))    
-
-  
 
 #LVE
 ##Local Venue Entertainment
@@ -35,10 +31,17 @@ General Assembly for Project 1 of the Web Development Immersive program.
 #####Front-end: 
   <li>Twitter Bootstrap</li>
   </ul>
-----
+  
+  ---------------
 
 ##![ERD](http://i.imgur.com/fvC4kvr.png)
+
+-----
+
 ##[User Stories](https://trello.com/b/0vadeON8/lve-local-venue-entertainment)
+
+------
+
 ##Wireframes
 ![Home Page](http://i.imgur.com/FMSr8P3.png)
 ![Search page](http://i.imgur.com/LvMQeb4.png)
