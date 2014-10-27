@@ -34,7 +34,7 @@ General Assembly for Project 1 of the Web Development Immersive program.
   
   ---------------
 
-##![ERD](http://i.imgur.com/fvC4kvr.png)
+##![ERD](http://i.imgur.com/ipJ6hOP.png)
 
 -----
 
