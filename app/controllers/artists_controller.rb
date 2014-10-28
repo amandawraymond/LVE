@@ -13,6 +13,8 @@ class ArtistsController < ApplicationController
     if @artist.save
       redirect_to artist_path(@artist.id)
       render 'new'
+    else
+      render 
     end
   end
 
@@ -21,7 +23,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-    @artist = Arist.find(params[:id])
+    @artist = Artist.find(params[:id])
     @artist.destroy
     redirect_to artists_path, notice: "You have deleted a artist"
   end

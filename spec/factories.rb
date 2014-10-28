@@ -1,5 +1,11 @@
 FactoryGirl.define do
-   sequence :name do |n|
+  factory :artist do
+    name
+    similar 
+    user 
+  end
+
+  sequence :name do |n|
     "Name-#{n}"
   end 
 
