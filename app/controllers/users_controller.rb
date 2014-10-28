@@ -7,9 +7,8 @@ class UsersController < ApplicationController
     @user =  User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to LVE! Start saving concerts to your profile!"
-      # sign_in @user
-      # redirect_back_or user_path(@user.id)
-      redirect_to @user
+      sign_in @user
+      redirect_back_or user_path(@user.id)
     else
       render 'new'
     end
@@ -24,4 +23,16 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+    # def signed_in_user
+    #   unless signed_in?
+    #     store_location
+    #     redirect_to signed_in, notice: "Please sign in"
+    #   end
+    # end
+
+    # def correct_user
+    #   @user = User.find(params[:id])
+    #   redirect_to(root_path) unless current_user?(@user)
+    # end
 end
