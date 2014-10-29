@@ -1,17 +1,10 @@
-<html>
-  <% provide(:title, "My Concerts") %>
-   <h1>My Concerts</h1>
-   <table>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-    <% @concerts.each do |concert| %>
-    <tr>
-      <td class="title"><%= concert.title %>&nbsp;&nbsp;</td>
-      <td class="link"><%= link_to 'Show', concert_path(task) %>&nbsp;&nbsp;</td>
-      <td class="link"><%= link_to 'Delete', concert_path(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-    </tr>
-    <% end %>
-  </table>
-  
-</html>
+<% provide(:title, "My Concerts") %>
+<h1>My Concerts</h1>
+<ul>
+  <% @concert_list["events"]["event"].each do |event| %>
+    <li><h2><%= event["artists"]["headliner"] %></h2></li>
+    <li><%= event["artists"]["artist"].join(", ") %></li>
+  <% end %>
+
+</ul> 
+

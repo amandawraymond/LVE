@@ -2,4 +2,19 @@
   <% provide(:title) %>
   <h1>Search Artists</h1>
 
+  <%= form_for(@artist) do |form| %>
+  <%= render 'shared/error_messages', object: form.object %>
+
+  <div>
+    <%= form.label :artist %>:
+    <%= form.text_field :name %>
+  </div>
+  <br />
+
+  <div class="button">
+    <%= form.submit 'Search' %>
+  </div>
+
+  <% end %>
+
 </html>

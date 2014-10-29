@@ -3,14 +3,19 @@ class ConcertsController < ApplicationController
   
   def new
      @concert = Concert.new
+
   end
 
   def show
-    @concert = Concert.find(params[:id])
+    # @concerts_of_location = Concert.location(params[:location])
+    # @concerts_of_artists = Concert.performing_artists(params[:performing_artists])
+    #@list_of_both = @concert_of_location["artists"]["artist"].include?[:performing_artists]
   end
 
   def create
-    @concert = current_user.concerts.build(concert_params)
+    # @my_concerts = current_user.concerts.find(concert_params[:concert_id])
+    @concert = @my_concerts.concerts.build(concert_params)
+    #@concert = current_user.concerts.build(concert_params)
     if @concert.save
       redirect_to concert_path(@concert.id)
     else
@@ -19,7 +24,9 @@ class ConcertsController < ApplicationController
   end
 
   def index
-    @concerts = current_user.concerts
+    # @concerts_of_location = Concert.location(params[:location])
+    # @concerts_of_artists = Concert.artist(params[:artist])
+    @concert_list = Concert.criteria(params[:location], params[:artist])
   end
 
   def destroy

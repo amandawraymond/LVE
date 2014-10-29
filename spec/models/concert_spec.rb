@@ -16,12 +16,12 @@ describe Concert do
   it { should be_valid }  
 
   describe "validations" do
-    describe "performing_artists" do
-      describe "not present" do
-        before { @concert.performing_artists = " "}
-        it { should_not be_valid }
-      end
-    end
+    # describe "performing_artists" do
+    #   describe "not present" do
+    #     before { @concert.performing_artists = " "}
+    #     it { should_not be_valid }
+    #   end
+    # end
     
     describe "concert_date" do 
       context "default" do
@@ -55,6 +55,24 @@ describe Concert do
         it "is provided" do
           new_concert = user.concerts.create(performing_artists: "Radiohead, Cher")
           expect(new_concert.website).to eq("http://www.last.fm/")
+        end
+      end
+    end
+
+    describe "location" do
+      context "default" do
+        it "is provided" do
+          new_concert = user.concerts.create(performing_artists: "Radiohead, Cher")
+          expect(new_concert.location).to eq("OuterSpace")
+        end
+      end
+    end
+
+    describe "headliner" do
+      context "default" do
+        it "is provided" do
+          new_concert = user.concerts.create(performing_artists: "Radiohead")
+          expect(new_concert.headliner).to eq("Radiohead")
         end
       end
     end

@@ -2,38 +2,11 @@
   <% provide(:title) %>
    <h1>Search Concerts</h1>
 
-   <%= form_for(@concert) do |form| %>
-  <%= render 'shared/error_messages', object: form.object %>
-
-  <div>
-    <%= form.label :performing_artists %>:
-    <%= form.text_field :performing_artist %>
-  </div>
-  <br />
-
-  <div>
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-  <br />
-
-  <div>
-    <%= form.label :password %>:
-    <%= form.password_field :password %>
-  </div>
-  <br />
-
-  <div>
-    <%= form.label :password_confirmation %>:
-    <%= form.password_field :password_confirmation %>
-  </div>
-  <br />
-
-  <div class="button">
-    <%= form.submit 'Sign Up' %>
-  </div>
-
-  <% end %>
+   <%= form_tag concerts_path, :method => 'get' do %>
+    <%= text_field_tag :location, params[:location] %>and/or
+    <%= text_field_tag :artist, params[:artist] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 
 
