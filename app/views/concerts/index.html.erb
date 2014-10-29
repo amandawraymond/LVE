@@ -1,0 +1,17 @@
+<html>
+  <% provide(:title, "My Concerts") %>
+
+   <table>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+    <% @concerts.each do |concert| %>
+    <tr>
+      <td class="title"><%= concert.title %>&nbsp;&nbsp;</td>
+      <td class="link"><%= link_to 'Show', concert_path(task) %>&nbsp;&nbsp;</td>
+      <td class="link"><%= link_to 'Delete', concert_path(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+    </tr>
+    <% end %>
+  </table>
+  
+</html>

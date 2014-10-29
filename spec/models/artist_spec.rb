@@ -24,7 +24,7 @@ describe Artist do
     describe "photo" do 
       context "default" do
         it "is provided" do
-          new_artist = user.artists.new(name: "Radiohead")
+          new_artist = user.artists.create(name: "Radiohead")
           expect(new_artist.photo).to eq("http://i.imgur.com/Ha087R9.jpg")
         end
       end
@@ -33,8 +33,8 @@ describe Artist do
     describe "similar" do
       context "default" do
         it "is provided" do
-          new_artist = user.artists.new(name: "Radiohead")
-          expect(new_artist.similar).to eq("no similar artist listed")
+          new_artist = user.artists.create(name: "Radiohead")
+          expect(new_artist.similar).to eq("No similar artist listed.")
         end
       end
     end

@@ -42,19 +42,19 @@ describe UsersController, type: :controller do
   end
 end
 
-  describe "GET show" do
-    let(:user) { FactoryGirl.create(:user) }
+  # describe "GET show" do
+  #   let(:user) { FactoryGirl.create(:user) }
     
-    it "assigns requested user to @user" do
-      get :show, id: user.id
-      assigns(:user).should eq(user)
-    end
+  #   it "assigns requested user to @user" do
+  #     get :show, id: user.id
+  #     assigns(:user).should eq(user)
+  #   end
     
-    it "renders :show" do
-      get :show, id: user.id
-      expect(response).to render_template(:show)
-    end
-  end
+  #   it "renders :show" do
+  #     get :show, id: user.id
+  #     expect(response).to render_template(:show)
+  #   end
+  # end
 end
  
 

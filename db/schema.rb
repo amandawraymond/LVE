@@ -11,15 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028174946) do
+ActiveRecord::Schema.define(version: 20141029142617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: true do |t|
     t.string   "name"
-    t.string   "photo",      default: "http://i.imgur.com/Ha087R9.jpg"
-    t.string   "similar",    default: "no similar artist listed"
+    t.string   "photo"
+    t.string   "similar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "concerts", force: true do |t|
+    t.date     "concert_date"
+    t.string   "concert_time"
+    t.string   "performing_artists"
+    t.string   "venue"
+    t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

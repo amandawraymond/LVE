@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :signed_in_user
+  
   def new
      @artist = Artist.new
   end
@@ -12,14 +13,13 @@ class ArtistsController < ApplicationController
     @artist = current_user.artists.build(artist_params)
     if @artist.save
       redirect_to artist_path(@artist.id)
-      render 'new'
     else
-      render 
+      render 'new'
     end
   end
 
   def index
-    @artist = current_user.artists
+    @artists = current_user.artists
   end
 
   def destroy

@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'artists/new'
-
-  get 'sessions/new'
 
   root 'static_pages#home'
   # match '/', to: 'static_pages#home',  via: 'get'
@@ -14,9 +10,10 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   
-  resources :users, only: [:create, :show]
-  resources :artists, only: [:create,:show, :index, :destroy]
-  resources :sessions, only: [:create,:destroy]
+  resources :users,    only: [:create, :show]
+  resources :artists,  only: [:new,    :create, :show, :index, :destroy]
+  resources :sessions, only: [:create, :destroy]
+  resources :concerts, only: [:new,    :create, :show, :index, :destroy]
   
 
 

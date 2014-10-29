@@ -5,11 +5,11 @@
     <tr>
       <th colspan="3"></th>
     </tr>
-    <% @tasks.each do |task| %>
+    <% @artists.each do |artist| %>
     <tr>
-      <td class="title"><%= task.title %>&nbsp;&nbsp;</td>
-      <td class="link"><%= link_to 'Show', task_path(task) %>&nbsp;&nbsp;</td>
-      <td class="link"><%= link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+      <td class="title"><%= artist.title %>&nbsp;&nbsp;</td>
+      <td class="link"><%= link_to 'Show', artist_path(task) %>&nbsp;&nbsp;</td>
+      <td class="link"><%= link_to 'Delete', artist_path(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>    
     </tr>
     <% end %>
   </table>

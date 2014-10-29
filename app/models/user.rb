@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :artists, dependent: :destroy
+  has_many :concerts, dependent: :destroy
   
   before_save { email.downcase! }
   before_create :create_remember_token

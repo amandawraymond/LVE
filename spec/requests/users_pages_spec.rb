@@ -57,17 +57,17 @@ describe "users" do
     end
   end
 
-  describe "show page GET /users/:id" do
-    before do
-      User.destroy_all
-      user = FactoryGirl.create(:user, name: "Amanda", email: "amanda@gmail.com")
-      visit user_path(user.id)
-    end
+  # describe "show page GET /users/:id" do
+  #   before do
+  #     User.destroy_all
+  #     user = FactoryGirl.create(:user, name: "Amanda", email: "amanda@gmail.com")
+  #     visit user_path(user.id)
+  #   end
 
-    it { should have_title("LVE | Amanda") }
-    it { should have_selector('h1', text: "Name: Amanda") }
-    it { should have_selector('h1', text: "Email: amanda@gmail.com")}
-  end
+  #   it { should have_title("LVE | Amanda") }
+  #   it { should have_selector('h1', text: "Name: Amanda") }
+  #   it { should have_selector('h1', text: "Email: amanda@gmail.com")}
+  # end
 end
 
 
