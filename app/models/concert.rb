@@ -1,11 +1,13 @@
 class Concert < ActiveRecord::Base
   belongs_to :user
-  before_create :set_concert_date
-  before_create :set_concert_time
-  before_create :set_venue
-  before_create :set_website
-  before_create :set_location
-  before_create :set_headliner
+  before_create :set_concert_date, :set_concert_time, :set_venue, :set_website,
+   :set_location, :set_headliner, :set_performing_artists
+  # before_create :set_concert_time
+  # before_create :set_venue
+  # before_create :set_website
+  # before_create :set_location
+  # before_create :set_headliner
+  # before_create :set_performing_artists
   
   # validates :performing_artists, presence: true 
   validates :user_id, presence: true
@@ -34,39 +36,51 @@ class Concert < ActiveRecord::Base
     self.headliner ||= self.performing_artists
   end
 
-
-  def self.location(location=nil)
-    auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
-    search_url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&format=json"
-    response = HTTParty.get search_url, auth
-    # response["events"]["event"]
+  def set_performing_artists
+    # binding.pry
+    self.performing_artists ||= "no opening acts"
   end
 
-  def self.artist(artist=nil)
-   
-    auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
-    search_url = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&artist=#{artist}&format=json"
-    response = HTTParty.get search_url, auth
-    # response["events"]["event"]
+
+  def self.location(location)
+
+    location = URI.encode(location)
+ 
+    # auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
+    search_url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&limit=50&api_key=0cf9f131e6c898341d48bf10b5488916&format=json"
+    # search_url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&format=json"
+    response = HTTParty.get search_url
+    response["events"]["event"]
   end
 
-  def self.both(location=nil, artist=nil )
-    location ||= "united states"
-    artist ||= "pretty lights"
+  def self.artist(artist)
+    
+    artist = URI.encode(artist)
 
+    auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
+    search_url = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&artist=#{artist}&autocorrect[1]&format=json"
+    response = HTTParty.get search_url, auth
+    response["events"]["event"]
+  end
+
+  def self.both(artist, location)  
+    
+    location = URI.encode(location)
+    
     auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
     search_url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&format=json"
     response = HTTParty.get search_url, auth
     
     response["events"]["event"].select do |event| 
-      event["artists"]["artist"][0].include?(artist)
+      artists = Array(event["artists"]["artist"]).map { |artist| artist.downcase }
+      artists.include?(artist)
     end         
   end
 
-  def self.criteria(artist=nil,location=nil)
-    if artist && !location
+  def self.criteria(artist,location)
+    if !artist.blank? && location.blank?
       self.artist(artist)
-    elsif !artist && location
+    elsif artist.blank? && !location.blank?
       self.location(location)
     else
       self.both(artist,location)

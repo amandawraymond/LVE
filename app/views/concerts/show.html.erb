@@ -1,7 +1,16 @@
-<html>
-  <% provide(:title, "@concert.concert_date") %>
-<!-- 
-  <h1><%#= @concert.headliner %></h1> -->
-   <%= @concerts %>
+<% provide(:title, "My Concerts") %>
 
-</html>
+Total count: <%= @my_concerts.count %><br/><br/>
+<br/>
+
+<% @my_concerts.each do |concert| %>
+  headliner:<%= concert.headliner %><br/>
+  other artists:<%= concert.performing_artists %><br/>
+  Date: <%= concert.concert_date %><br/>
+  Venue: <%= concert.venue %><br/>
+  Location: <%= concert.location %><br/>
+  Website: <%= concert.website %><br/>
+  <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %><br/><br/>
+
+  
+<% end %>

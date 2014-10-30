@@ -6,26 +6,32 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
+    @my_artists = current_user.artists
+    
   end
 
   def create
+    
     @artist = current_user.artists.build(artist_params)
     if @artist.save
-      redirect_to artist_path(@artist.id)
+      redirect_to myartists_path, notice: "You have created an artist"
     else
       render 'new'
     end
   end
 
   def index
-    @artists = current_user.artists
+    if params[:artist].blank?
+      redirect_to new_artist_path
+    else
+      @artist = Artist.artist_info(params[:artist])
+    end
   end
 
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
-    redirect_to artists_path, notice: "You have deleted a artist"
+    redirect_to myartists_path, notice: "You have deleted a artist"
   end
 
 

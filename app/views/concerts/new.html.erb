@@ -1,14 +1,15 @@
-<html>
-  <% provide(:title) %>
-   <h1>Search Concerts</h1>
+<% provide(:title) %>
+<h1>Search Concerts</h1>
 
-   <%= form_tag concerts_path, :method => 'get' do %>
-    location:<%= text_field_tag :location, params[:location] %>
-    <br/><br/>and/or <br/><br/>
-    artist:<%= text_field_tag :artist, params[:artist] %>
-    <%= submit_tag "Search", :name => nil %>
+<%= form_tag concerts_path, :method => 'get' do %>
+  location:<%= text_field_tag :location, params[:location] %>
+  <br/><br/>and/or <br/><br/>
+  artist:<%= text_field_tag :artist, params[:artist] %>
+  <%= submit_tag "Search", :name => nil %>
+
+  <br />
+  <%= link_to "View My Concerts", myconcerts_path %>
 <% end %>
 
 
 
-</html>

@@ -1,7 +1,14 @@
-<html>
-  <% provide(:title, "@artist.name") %>
+<% provide(:title, "My Artists") %>
+<h1>My Artists</h1>
+Total count: <%= @my_artists.count %><br/><br/>
+<br/>
 
-  <h1><%= @artist.name %></h1>
- 
+<% @my_artists.each do |artist| %>
+  Artist: <%= artist.name %><br/>
+  <%= image_tag(artist.photo) %><br/>
+  Similar Artists: <%= artist.similar %><br/><br/>
+  <%= link_to 'Delete', artist_path(artist), method: :delete, data: { confirm: 'Are you sure?' } %><br/><br/>
+<% end %>
 
-</html>
+
+

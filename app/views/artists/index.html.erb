@@ -1,17 +1,30 @@
-<html>
-  <% provide(:title, "My Artists") %>
-  <h1>My Artists</h1>
-   <table>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-    <% @artists.each do |artist| %>
-    <tr>
-      <td class="title"><%= artist.title %>&nbsp;&nbsp;</td>
-      <td class="link"><%= link_to 'Show', artist_path(task) %>&nbsp;&nbsp;</td>
-      <td class="link"><%= link_to 'Delete', artist_path(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-    </tr>
-    <% end %>
-  </table>
-  
-</html>
+<% provide(:title, "Search Results") %>
+
+<h1>Artist Search Result</h1>
+
+<% if @artist.include?("error") %>
+  Sorry, there are no artists listed with that name. 
+  <br/><%= link_to "Search More Artists", new_artist_path  %>
+  <br/><%= link_to "Search Concerts for Similar Artists", new_concert_path  %>
+<% else %>
+
+<h1>Name: <%= @artist["artist"]["name"] %></h1>
+<%= image_tag(@artist["artist"] ["image"][2]["#text"]) %>
+<% if @artist["artist"]["similar"].include?("artist") %>
+  <h1>Similar Artists:</h1>
+
+  <% @artist["artist"]["similar"]["artist"].each do |artist| %>
+     <%= artist["name"] %><br/>
+  <% end %>
+<% else %>
+  <h1>Similar Artists: no similar artists listed at this moment.</h1>
+<% end %>
+<h1><%= @artist["artist"]["bio"]["summary"].html_safe %></h1>
+
+<% similar_name = @artist["artist"]["similar"].include?("artist") ? @artist["artist"]["similar"]["artist"][0]["name"] : " " %>
+<%= link_to "Add to My Artists", artists_path(artist: { name: @artist["artist"]["name"], photo: @artist["artist"]["image"][3]["#text"], similar: similar_name } ), 
+    method: :post %>
+<% end %>
+
+
+    

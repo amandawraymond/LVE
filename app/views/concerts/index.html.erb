@@ -1,25 +1,35 @@
-<% provide(:title, "My Concerts") %>
-<h1>My Concerts</h1>
-<table >
-  <% @concert_list.each do |event| %> 
-    <tr><h2><%= event["artists"]["headliner"] %></h2></tr>
+<% provide(:title, "Concert Results") %>
+
+<h1>Concert Search Results</h1>
+
+<%if Array(@concerts).count == 0 %>
+  Sorry, there are no concerts listed for that criteria at this moment. Check back later. 
+  <br/><%= link_to "Search More Concerts", new_concert_path  %>
+  <br/><%= link_to "Search Similar Artists", new_artist_path  %>
+<% else %>
+  <table >
+    <% @concerts.each do |event| %> 
+      <tr><h2><%= event["artists"]["headliner"] %></h2></tr>
       <%if event["artists"]["artist"].class == String %>
-        <%= event["artists"]["artist"] %>
+        <%= event["artists"]["artist"] %><br/>
       <% else %>
         Featuring:<br/>
         <% event["artists"]["artist"].each do |artist| %>
-          
-             <tr><%= artist %></tr><br/>
-          
+          <tr><%= artist %></tr><br/> 
         <% end %>
       <% end %>
-    venue:<br/>
-    <tr><%= event["venue"]["name"] %>, <%= event["venue"]["location"]["city"] %></tr><br/>
-    Date:<br/>
-    <tr><%= event["startDate"].to_date %></tr><br/>
-    <tr><%= link_to 'More info', event["url"] %></tr><br/>
+      venue:<br/>
+      <tr><%= event["venue"]["name"] %>, <%= event["venue"]["location"]["city"] %></tr><br/>
+      Date:<br/>
+      <tr><%= event["startDate"].to_date %></tr><br/>
+      <tr><%= link_to 'More info', event["url"] %></tr><br/>
+      <%= link_to "Add to My Concerts", concerts_path(concert: { headliner: event["artists"]["headliner"],   
+      performing_artists: event["artists"]["artist"].to_s, location: event["venue"]["location"]["city"], 
+      venue: event["venue"]["name"], concert_date: event["startDate"].to_date, website: event["url"]  }), 
+      method: :post %>
+    <% end %>
+  </table> 
+<% end %>
+ 
 
-  <% end %>
-  </ul>
-</table> 
 
