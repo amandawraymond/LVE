@@ -39,6 +39,7 @@ class Concert < ActiveRecord::Base
     auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
     search_url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&format=json"
     response = HTTParty.get search_url, auth
+    # response["events"]["event"]
   end
 
   def self.artist(artist=nil)
@@ -46,9 +47,10 @@ class Concert < ActiveRecord::Base
     auth = { query: { api_key: '0cf9f131e6c898341d48bf10b5488916' }} 
     search_url = "http://ws.audioscrobbler.com/2.0/?method=artist.getevents&artist=#{artist}&format=json"
     response = HTTParty.get search_url, auth
+    # response["events"]["event"]
   end
 
-  def self.both(artist=nil, location=nil)
+  def self.both(location=nil, artist=nil )
     location ||= "united states"
     artist ||= "pretty lights"
 
@@ -56,14 +58,9 @@ class Concert < ActiveRecord::Base
     search_url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&format=json"
     response = HTTParty.get search_url, auth
     
-    response = 
-    response["events"]["event"].each do |event| 
-      if event["artists"]["artist"].include?(artist)}
-        return event
-      else
-        return "Sorry there are no current concerts listed for #{artist} in #{location}. Try again later!"
-      end
-    end           
+    response["events"]["event"].select do |event| 
+      event["artists"]["artist"][0].include?(artist)
+    end         
   end
 
   def self.criteria(artist=nil,location=nil)
