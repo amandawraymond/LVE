@@ -15,6 +15,10 @@
  *= import "font-awesome-sprockets"
  *= import "font-awesome"
  *= require_tree .
- *= require_custom
  *= require_self
  */
+
+
+body {
+  padding: 50px;
+}
