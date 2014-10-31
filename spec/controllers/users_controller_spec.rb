@@ -5,7 +5,7 @@ describe UsersController, type: :controller do
     User.destroy_all
   end
   let(:user) { FactoryGirl.create(:user) }
-  before { sign_in user, no_capybara: true }
+ 
 
   describe "GET new" do
     it "assigns a new User to @user" do
@@ -50,6 +50,7 @@ end
 
   describe "GET show" do
     let(:user) { FactoryGirl.create(:user) }
+    before { sign_in user, no_capybara: true }
     
     it "assigns requested user to @user" do
       get :show, id: user.id

@@ -1,2 +1,110 @@
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Syncopate|Oswald|Orbitron);
 
+
+.navbar {
+  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+body {
+  margin-top: 60px;
+}
+/*home static page*/
+#bg-home {
+  background-image: url('http://i.imgur.com/UMAjFiA.jpg?1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#title-home {
+  position: fixed;
+  padding: 60px;
+  font-family: 'Syncopate', sans-serif;  
+}
+
+span {
+  font-size: 60px;
+}
+
+#header-home {
+  position: fixed;
+  padding: 30px;
+}
+/*help page*/
+#bg-help {
+  background-image: url('http://i.imgur.com/UMAjFiA.jpg?1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#title-help {
+  position: fixed;
+  padding: 60px;
+  font-family: 'Syncopate', sans-serif;  
+  font-size: 30px;
+}
+#header-help {
+  position: fixed;
+  padding: 100px;
+  font-family: 'Orbitron', sans-serif;
+}
+#header-help2 {
+  position: fixed;
+  padding: 130px;
+  font-size: 10px;
+  padding-left: -80px;
+  font-family: 'Orbitron', sans-serif;
+}
+/*contact page*/
+#bg-contact {
+  background-image: url('http://i.imgur.com/UMAjFiA.jpg?1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#title-contact {
+  margin-left: 50px;
+  position: fixed;
+  padding: 60px;
+  font-family: 'Orbitron', sans-serif;  
+  font-size: 30px;
+}
+#header-contact {
+  margin-left: 50px;
+  position: fixed;
+  padding: 100px;
+  font-family: 'Syncopate', sans-serif;
+}
+#header-contact2 {
+  margin-left: 50px;
+  position: fixed;
+  padding: 130px;
+  font-size: 15px;
+  padding-left: -80px;
+  font-family: 'Syncopate', sans-serif; 
+}
+/*about page*/
+#bg-about {
+  background-image: url('http://i.imgur.com/UMAjFiA.jpg?1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#title-about {
+  margin-left: 50px;
+  position: fixed;
+  padding: 60px;
+  font-family: 'Orbitron', sans-serif;  
+  font-size: 30px;
+}
+#header-about {
+  margin-left: 50px;
+  position: fixed;
+  padding: 110px;
+  font-family: 'Syncopate', sans-serif;
+}
+#header-about2 {
+  margin-left: 50px;
+  position: fixed;
+  padding: 60px;
+  font-size: 15px;
+  padding-left: -80px;
+  font-family: 'Syncopate', sans-serif; 
+}
