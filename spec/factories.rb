@@ -9,8 +9,8 @@ FactoryGirl.define do
 
   factory :artist do
     name
-    similar
-    photo 
+    similar " "
+    photo " "
     user 
   end
 

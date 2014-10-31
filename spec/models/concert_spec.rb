@@ -16,13 +16,6 @@ describe Concert do
   it { should be_valid }  
 
   describe "validations" do
-    # describe "performing_artists" do
-    #   describe "not present" do
-    #     before { @concert.performing_artists = " "}
-    #     it { should_not be_valid }
-    #   end
-    # end
-    
     describe "concert_date" do 
       context "default" do
         it "is provided" do

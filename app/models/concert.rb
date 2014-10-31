@@ -2,12 +2,7 @@ class Concert < ActiveRecord::Base
   belongs_to :user
   before_create :set_concert_date, :set_concert_time, :set_venue, :set_website,
    :set_location, :set_headliner, :set_performing_artists
-  # before_create :set_concert_time
-  # before_create :set_venue
-  # before_create :set_website
-  # before_create :set_location
-  # before_create :set_headliner
-  # before_create :set_performing_artists
+    
   
   # validates :performing_artists, presence: true 
   validates :user_id, presence: true

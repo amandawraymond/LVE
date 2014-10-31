@@ -25,7 +25,7 @@ describe Artist do
       context "default" do
         it "is provided" do
           new_artist = user.artists.create(name: "Radiohead")
-          expect(new_artist.photo).to eq("http://i.imgur.com/Ha087R9.jpg")
+          expect(new_artist.photo).to eq("http://i.imgur.com/Ha087R9.jpg?3")
         end
       end
     end

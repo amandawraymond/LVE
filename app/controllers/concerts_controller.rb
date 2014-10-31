@@ -1,4 +1,4 @@
-class ConcertsController < ApplicationController
+  class ConcertsController < ApplicationController
   before_action :signed_in_user
   
   def new

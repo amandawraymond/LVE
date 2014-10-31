@@ -3,7 +3,7 @@ class Artist < ActiveRecord::Base
   before_create :set_photo, :set_similar
   
   
-  validates :name, presence: true, uniqueness: { case_sensitive: false }  
+  validates :name, presence: true #, uniqueness: { case_sensitive: false }  
   validates :user_id, presence: true
 
   def set_photo
