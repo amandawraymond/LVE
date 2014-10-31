@@ -1,11 +1,14 @@
 <html id="bg-search2">
   <% provide(:title) %>
-  <div class="jumbotron.search">
-    <!-- <h1>Search Artists</h1> -->
+  <div class="jumbotron search2">
+    <!-- <h1>Search Artists</h > -->
     <%= form_tag artists_path, :method => 'get' do %>
-      artist:<%= text_field_tag :artist, params[:artist] %>
-      <%= submit_tag "Search", :name => nil %><br />
-      <%= link_to "View My Artists", myartists_path %>
+      <div id="searchtag">artist:<br /></div>
+      <%= text_field_tag :artist, params[:artist] %><br /><br />
+      <div id="searchtag2">
+        <%= submit_tag "Search", :name => nil %>
+      </div>
+      
     <% end %>
   </div>
 </html>

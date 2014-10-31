@@ -1,14 +1,14 @@
 <html id="bg-search">
 <% provide(:title) %>
 
-<div class="jumbotron search>
+<div class="jumbotron search">
 <!-- <h1 id="concert-search-title">Concerts</h1> -->
 <div id="search-params">
 <%= form_tag concerts_path, :method => 'get' do %>
-  <div class="form-text">Location:</div><br/>
+  <div class="form-text">Concert Location:</div><br /><br />
   <%= text_field_tag :location, params[:location] %>
  <br/><br/><br/>
-  <div class="form-text">Artist:</div><br/>
+  <div class="form-text">& Artist:</div><br /><br />
   <%= text_field_tag :artist, params[:artist] %><br /><br /><br /><br />
   <%= submit_tag "Search", :name => nil %>
 </div>

@@ -5,9 +5,14 @@
 .navbar {
   font-size: 20px;
   font-family: 'Orbitron', sans-serif;
+  background-color: #000000; 
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
 }
 body {
-  margin-top: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 /*home static page*/
 #bg-home {
@@ -209,7 +214,117 @@ span {
 /*artist search*/
 
 #bg-search2 {
+  background-image: url('http://i.imgur.com/zCJezhy.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.jumbotron.search2 {
+  position:fixed;
+  width: 60%;
+  margin-top: 250px;
+  margin-left: 450px;
+  margin-right: auto;
+  font-size: 16px;
+  height: 60%;
+  background: transparent;
+  size: 50px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+}
+#searchtag {
+  color: black;
+  font-size: 100px;
+  margin-left: -40px;
+}
+#searchtag2 {
+  margin-left: 70px;
+}
+/*user page*/
+
+
+#bg-user {
+  background-image: url('http://i.imgur.com/WEPNSNd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: fixed;
+  color: white;
+  font-size: 50px;
+  font-family: 'Syncopate', sans-serif;
+  padding-top: 20px;
+}
+/*index concerts*/
+#bg-results {
   background-image: url('http://i.imgur.com/YayQJyp.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+.results {
+  width: 60%;
+  margin-top: 60px;
+  margin-left: 350px;
+  margin-right: auto;
+  font-size: 16px;
+  height: 60%;
+  background: transparent;
+  size: 50px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 500px;
+}
+
+/*artist search results*/
+
+#bg-list {
+  background-image: url('http://i.imgur.com/x2G2aLn.jpg');  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#artist-results {
+  text-align: center;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  background: transparent;
+  size: 50px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 500px;
+}
+/*my artists*/
+#bg-list {
+  background-image: url('http://i.imgur.com/x2G2aLn.jpg');  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#artist-results {
+  text-align: center;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  background: transparent;
+  size: 50px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 500px;
+}
+
+.header1 {
+
+
+  color: white;
+  font-size: 50px;
+  font-family: 'Orbitron', sans-serif;
+  padding-top: 20px;
+}
+
+.concert-name {
+  font-size: 100px;
 }

@@ -1,16 +1,20 @@
-<% provide(:title, "My Concerts") %>
-<h1>My Concerts</h1>
-Total count: <%= @my_concerts.count %><br/><br/>
-<br/>
 
-<% @my_concerts.each do |concert| %>
-  headliner:<%= concert.headliner %><br/>
-  other artists:<%= concert.performing_artists %><br/>
-  Date: <%= concert.concert_date %><br/>
-  Venue: <%= concert.venue %><br/>
-  Location: <%= concert.location %><br/>
-  Website: <%= concert.website %><br/>
-  <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %><br/><br/>
+<html id="bg-list">
+<body id="artist-results">
+  <% provide(:title, "My Concerts") %>
+  <h1 class="header1">My Concerts</h1>  <br/>
 
-  
-<% end %>
+  <h1><% @my_concerts.each do |concert| %></h1>
+    <%= concert.headliner %><br/>
+   
+     <%= concert.concert_date %><br/>
+    <%= concert.performing_artists.to_s %><br/>
+    @<%= concert.venue %><br/>
+    in <%= concert.location %><br/>
+    <%= link_to 'More Info', concert.website.html_safe %><br/>
+    <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %><br/><br/>
+    _____________________________________________<br/><br/>
+
+  <% end %>
+</body>
+</html>

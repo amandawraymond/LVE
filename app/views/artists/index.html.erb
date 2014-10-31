@@ -1,7 +1,8 @@
-<html id="bg-results">
+<html id="bg-list">
   <% provide(:title, "Search Results") %>
-  <body id="jumbotron">
-    <h1>Artist Search Result</h1>
+  <body id="artist-results"><!-- 
+    <h1>Artist Search Result</h1> -->
+   
 
     <% if @artist.include?("error") %>
       Sorry, there are no artists listed with that name. 
@@ -9,8 +10,12 @@
       <br/><%= link_to "Search Concerts for Similar Artists", new_concert_path  %>
     <% else %>
 
-    <h1>Name: <%= @artist["artist"]["name"] %></h1>
-    <%= image_tag(@artist["artist"] ["image"][2]["#text"]) %>
+    <h1><%= @artist["artist"]["name"] %></h1>
+
+    <%= image_tag(@artist["artist"] ["image"][4]["#text"]) %><br/>
+     <% similar_name = @artist["artist"]["similar"].include?("artist") ? @artist["artist"]["similar"]["artist"][0]["name"] : " " %>
+    <%= link_to "Add to My Artists", artists_path(artist: { name: @artist["artist"]["name"], photo: @artist["artist"]["image"][3]["#text"], similar: similar_name } ), 
+        method: :post %>
     <% if @artist["artist"]["similar"].include?("artist") %>
       <h1>Similar Artists:</h1>
 
@@ -22,9 +27,7 @@
     <% end %>
     <h1><%= @artist["artist"]["bio"]["summary"].html_safe %></h1>
 
-    <% similar_name = @artist["artist"]["similar"].include?("artist") ? @artist["artist"]["similar"]["artist"][0]["name"] : " " %>
-    <%= link_to "Add to My Artists", artists_path(artist: { name: @artist["artist"]["name"], photo: @artist["artist"]["image"][3]["#text"], similar: similar_name } ), 
-        method: :post %>
+    
     <% end %>
   </body>
 </html>
