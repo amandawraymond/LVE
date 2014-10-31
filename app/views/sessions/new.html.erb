@@ -1,25 +1,20 @@
 <html>
   <% provide(:title, "Sign In") %>
-
-  <h1>Sign In</h1>
- <!--  <div class="jumbotron"> -->
-    <%= form_for(:session, url: sessions_path) do |form| %>
-
-      <div>
-        <%= form.label :email %>
-        <%= form.text_field :email %>
-      </div>
-      <br/>
-
-      <div>
-        <%= form.label :password %>
-        <%= form.password_field :password %>
-      </div>
-      <br/>
-
-      <div class="button">
-        <%= form.submit 'Sign In' %>
-      </div>
-    <% end %>
-<!--   </div> -->
+  
+  <div class="jumbotron text-center">
+    <h1 id="signin-title">Sign In</h1>
+    <div class="user-form">
+      <%= form_for(:session, url: sessions_path) do |form| %>
+          <%= form.label :email %>
+          <%= form.text_field :email %>
+        <br/>
+          <%= form.label :password %>
+          <%= form.password_field :password %>
+        <br/>
+        <div class="button">
+          <%= form.submit 'Sign In' %>
+        </div>
+      <% end %>
+    <div>
+  </div>
 </html>
