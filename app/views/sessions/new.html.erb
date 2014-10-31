@@ -1,18 +1,20 @@
-<html>
+<html id="bg-signin">
   <% provide(:title, "Sign In") %>
-  
+
   <div class="jumbotron text-center">
-    <h1 id="signin-title">Sign In</h1>
+    <h1 id="signin-title">Come In</h1>
     <div class="user-form">
       <%= form_for(:session, url: sessions_path) do |form| %>
-          <%= form.label :email %>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= form.label :email %>
           <%= form.text_field :email %>
+        <br/>
         <br/>
           <%= form.label :password %>
           <%= form.password_field :password %>
         <br/>
+        <br/>
         <div class="button">
-          <%= form.submit 'Sign In' %>
+         <%= form.submit 'Enter' %>
         </div>
       <% end %>
     <div>

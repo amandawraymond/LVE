@@ -7,7 +7,7 @@
   font-family: 'Orbitron', sans-serif;
 }
 body {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 /*home static page*/
 #bg-home {
@@ -18,17 +18,19 @@ body {
 
 #title-home {
   position: fixed;
-  padding: 60px;
+  padding: 120px;
   font-family: 'Syncopate', sans-serif;  
 }
 
 span {
-  font-size: 60px;
+  font-size: 90px;
+  padding: 10px;
 }
 
 #header-home {
   position: fixed;
-  padding: 30px;
+  padding-top: 100px;
+  padding-left: 60px;
 }
 /*help page*/
 #bg-help {
@@ -101,14 +103,113 @@ span {
   font-family: 'Syncopate', sans-serif;
 }
 /*signin page*/
+#bg-signin {
+  background-image: url('http://i.imgur.com/UMAjFiA.jpg?1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-.jumbotron {
-  width: 60%;
-  margin-left: auto;
+.jumbotron.text-center {
+  position:fixed;
+  width: 50%;
+  margin-top: 0px;
+  margin-left: -80px;
+  margin-right: auto;
+  font-size: 16px;
+  height: 100%;
+  background: transparent;
+  size: 20px;
+  color:black;
+  font-family: 'Syncopate', sans-serif;
+}
+.user-form {
+  font-family: 'Syncopate', sans-serif; 
+  color:black;
+}
+#signin-title {
+  font-family: 'Orbitron', sans-serif;
+  padding-left: 100px;
+  color: black;
+}
+.button {
+  padding-left: 100px;
+}
+/*signup*/
+
+#bg-signup {
+  background-image: url('http://i.imgur.com/UMAjFiA.jpg?1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jumbotron.text-center {
+  position:fixed;
+  width: 50%;
+  margin-top: -10px;
+  margin-left: 50px;
   margin-right: auto;
   font-size: 16px;
   height: 100%;
   background: transparent;
   size: 30px;
+  font-family: 'Syncopate', sans-serif;
+}
+#signup-title {
+  color: black;
+  font-family: 'Orbitron', sans-serif;
+  padding-left: 100px;
+  font-size: 50px;
+}
+#margin-signup {
+  margin-top: 20px;
+}
+.button.signup {
+  padding-left: 100px;
+}
+#form-name {
+  padding-left: 50px;
+}
+#form-confirmation {
+  padding-right: 50px;
+}
+/*search concert*/
+
+#bg-search {
+  background-image: url('http://i.imgur.com/TtK2nMw.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.jumbotron.search {
+  position:fixed;
+  width: 100%;
+  margin-top: -10px;
+  margin-left: 50px;
+  margin-right: auto;
+  font-size: 16px;
+  height: 100%;
+  background: transparent;
+  size: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+#concert-search-title{
+  text-align: center;
+  padding-right:130px;
+  color: #E9E9E9;
+}
+#search-params {
+  text-align: center;
+  padding-right: 150px;
+  padding-top: 30px;
+}
+.form-text {
+  color: #E9E9E9;
+  font-size: 40px;
+}
+/*artist search*/
+
+#bg-search2 {
+  background-image: url('http://i.imgur.com/YayQJyp.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

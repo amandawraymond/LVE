@@ -1,15 +1,23 @@
+<html id="bg-search">
 <% provide(:title) %>
-<h1>Search Concerts</h1>
 
+<div class="jumbotron search>
+<!-- <h1 id="concert-search-title">Concerts</h1> -->
+<div id="search-params">
 <%= form_tag concerts_path, :method => 'get' do %>
-  location:<%= text_field_tag :location, params[:location] %>
-  <br/><br/>and/or <br/><br/>
-  artist:<%= text_field_tag :artist, params[:artist] %>
+  <div class="form-text">Location:</div><br/>
+  <%= text_field_tag :location, params[:location] %>
+ <br/><br/><br/>
+  <div class="form-text">Artist:</div><br/>
+  <%= text_field_tag :artist, params[:artist] %><br /><br /><br /><br />
   <%= submit_tag "Search", :name => nil %>
+</div>
 
-  <br />
-  <%= link_to "View My Concerts", myconcerts_path %>
+  
+  <%#= link_to "View My Concerts", myconcerts_path %>
 <% end %>
+</div>
+</html>
 
 
 
