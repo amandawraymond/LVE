@@ -79,13 +79,12 @@ span {
   position: fixed;
   padding: 60px;
   font-family: 'Orbitron', sans-serif;  
-  font-size: 30px;
+  font-size: 40px;
 }
-#header-about {
-  margin-left: 50px;
-  position: fixed;
-  padding: 110px;
-  font-family: 'Syncopate', sans-serif;
+.header-about {
+ font-size: 20px;
+ font-family: 'Syncopate', sans-serif;
+
 }
 /*signin page*/
 
@@ -119,35 +118,27 @@ span {
 
 
 .jumbotron.text-center {
-  position:fixed;
   width: 50%;
-  margin-top: -10px;
-  margin-left: 50px;
-  margin-right: auto;
   font-size: 16px;
   height: 100%;
   background: transparent;
   size: 30px;
-  font-family: 'Syncopate', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  margin-top: -40px;
+  text-align: center;
+  margin-left: 40px;
 }
 #signup-title {
-  color: black;
-  font-family: 'Orbitron', sans-serif;
-  padding-left: 100px;
-  font-size: 50px;
+  margin-right: -90px;
 }
-#margin-signup {
-  margin-top: 20px;
-}
-.button.signup {
-  padding-left: 100px;
-}
-#form-name {
-  padding-left: 50px;
+#form-email {
+  margin-right: 45px;
 }
 #form-confirmation {
-  padding-right: 50px;
+  margin-right: 35px;
 }
+
 /*search concert*/
 
 #bg-search { 
