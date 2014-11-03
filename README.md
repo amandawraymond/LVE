@@ -14,6 +14,8 @@ General Assembly for Project 1 of the Web Development Immersive program.
 ----
 ###Technologies Utilized  
 
+#####Version Control:
+  <li>Github</li>
 #####Back-end:
   <li>Language: Ruby 2.1.2</li>
   <li>Framework: Rails 4.1.6</li>
@@ -31,10 +33,13 @@ General Assembly for Project 1 of the Web Development Immersive program.
 #####Front-end: 
   <li>Twitter Bootstrap</li>
   </ul>
+#####Deployment: 
+  <li>Heroku</li>
+  </ul>
   
   ---------------
 
-##![ERD](http://i.imgur.com/a28pKi3.png)
+##![ERD](http://i.imgur.com/3Oco9DX.png)
 
 -----
 
