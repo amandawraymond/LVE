@@ -1,16 +1,16 @@
-<html id="bg-list">
-  <% provide(:title, "My Artists") %>
-  <body id="artist-results">
-    <h1 class="header1">My Artists</h1><br/><br/>
-    <% @my_artists.each do |artist| %>
-      <%= artist.name %><br/><br/>
-      <%= image_tag(artist.photo) %><br/>
-      Similar Artists: <%= artist.similar %><br/><br/>
-      <%= link_to 'Delete', artist_path(artist), method: :delete, data: { confirm: 'Are you sure?' } %><br/><br/>
-      ---------------------------------<br/><br/>
-    <% end %>
-  </body>
-</html>
+<img src="http://i.imgur.com/x2G2aLn.jpg" id="bg-list">
+<% provide(:title, "My Artists") %>
+<div id="saved-results">
+  <h1 class="header1">My Artists</h1><br/><br/>
+  <% @my_artists.each do |artist| %>
+    <%= artist.name %><br/><br/>
+    <%= image_tag(artist.photo) %><br/>
+    Similar Artists: <%= artist.similar %><br/><br/>
+    <%= link_to 'Delete', artist_path(artist), method: :delete, data: { confirm: 'Are you sure?' } %><br/><br/>
+    ---------------------------------<br/><br/>
+  <% end %>
+</div>
+
 
 
 
