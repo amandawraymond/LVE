@@ -1,6 +1,6 @@
-
-#LVE
+#[LVE](https://lve.herokuapp.com)
 ##Local Venue Entertainment
+
 
 ----------------------------------------
 
@@ -34,11 +34,23 @@ General Assembly for Project 1 of the Web Development Immersive program.
   
   ---------------
 
-##![ERD](http://i.imgur.com/ipJ6hOP.png)
+##![ERD](http://i.imgur.com/a28pKi3.png)
 
 -----
 
 ##[User Stories](https://trello.com/b/0vadeON8/lve-local-venue-entertainment)
+* As a user, I want to sign up for an account with an email address and password.
+* As a user, I want to log in to my account.
+* As a user, I want to be redirected to my profile page after sign in.
+* As a uer, I will be able to use the navigation bar to navigate the site and search for concerts and artists.  
+* As a user, I want to be able to search for concerts by location and/or artist.  
+* As a user, I want to select concerts from my search results and save them to my concerts page. 
+* As a user, I want to be able to view my concerts that I added to my profile.  
+* As a user, I want to be able search my favorite artists to get info on them, like similar artists. 
+* As a user, I want to select artists from my search results and save them to my artists page. 
+* As a user, I want to be able view my artists that I added to my profile. 
+* As a user, I want to be able to delete concerts and artists from my profile.   
+* As a user, I want to be able logout of my account. 
 
 ------
 
