@@ -1,36 +1,43 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'LVE', root_path, class: "navbar-brand" %>
+    </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li> 
+        <% if signed_in? %>
+          <li><%= link_to "Concerts", new_concert_path %></li>
+          <li><%= link_to "Artists", new_artist_path %></li>
+          <li class="visible-xs"><%= link_to "Contact", contact_path %></li>
+          <li class="visible-xs"><%= link_to "About", about_path %></li>
+          <li class="visible-xs"><%= link_to "Help", help_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
           <% if signed_in? %>
-              <a class="nav navbar-nav" href="/concerts/new">Search Concerts</a>
-              <a class="nav navbar-nav" href="/artists/new"> Search Artists</a>
-            <% else %>
-              <a class="nav navbar-nav" href="/home">LVE</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "My Concerts", myconcerts_path %></li>
+              <li><%= link_to "My Artist", myartists_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+            </ul>
+          <% else %>
+            <li><%= link_to "Sign Up", signup_path %></li>
+            <li><%= link_to "Sign In", signin_path %></li>
           <% end %>
         </li>
       </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <% if signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %><span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li class="linkster"><%= link_to "My Concerts", myconcerts_path %></li>
-              <li class="linkster"><%= link_to "My Artist", myartists_path %></li>
-              <li class="linkster"><%# link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li class="linkster"><%= link_to "Sign Out", signout_path, method: "delete" %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Sign In", signin_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>

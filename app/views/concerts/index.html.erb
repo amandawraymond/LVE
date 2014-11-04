@@ -1,9 +1,16 @@
 <img src="http://i.imgur.com/x2G2aLn.jpg" id="bg-results">
 <% provide(:title, "Concert Results") %>
 <div class="results">
- <!--  <h1 class="concert-results">Concert Search Results</h1> -->
 
-  <%if Array(@concerts).count == 0 %>
+  <% unless Array(@concerts).count == 0 %>
+    <%= render 'results' %>
+  <% else %>
+    Sorry, there are no concerts listed for that criteria at this moment.</br> Check back later.</br> </br>  
+    <br/><%= link_to "Search More Concerts", new_concert_path %> OR 
+    <%= link_to "Search Similar Artists Names", new_artist_path %>
+  <% end %>
+
+  <% if Array(@concerts).count == 0 %>
     Sorry, there are no concerts listed for that criteria at this moment.</br> Check back later.</br> </br>  
     <br/><%= link_to "Search More Concerts", new_concert_path  %> OR 
     <%= link_to "Search Similar Artists Names", new_artist_path  %>
@@ -12,30 +19,26 @@
       <br/><% @concerts.each do |event| %> 
         <tr><h2><%= event["artists"]["headliner"] %></h2></tr>
         <br/>
-        <tr><%= event["startDate"].to_date %></tr><br/></br>
+        <tr><%= show_date(event) %></tr>
+        <tr><%# event["startDate"].to_date %></tr><br/></br>
         @ <tr><%= event["venue"]["name"] %><br/>
         in <%= event["venue"]["location"]["city"] %></tr><br/><br/>
 
-        <%if event["artists"]["artist"].class == String %>
-          <%= event["artists"]["artist"] %><br/>
-        <% else %>
-          Featuring:<br/>
-          <% event["artists"]["artist"].each do |artist| %>
-            <tr><%= artist %></tr><br/> 
-          <% end %>
+        Featuring:<br/>
+        <% Array(event["artists"]["artist"]).each do |artist| %>
+          <tr><%= artist %></tr><br/>
         <% end %>
     
         <br/>
         <tr class="link"><%= link_to 'More info', event["url"] %></tr><br/><br/>
+        <tr class><%= add_to_concerts(event) %></tr>
         <tr class="link"><%= link_to "Add to My Concerts", concerts_path(concert: { headliner: event["artists"]["headliner"],   
         performing_artists: event["artists"]["artist"].to_s, location: event["venue"]["location"]["city"], 
         venue: event["venue"]["name"], concert_date: event["startDate"].to_date, website: event["url"]  }), 
         method: :post %></tr>
-        <h1>________________________________________</h1>
+        ________________________________________
       <% end %>
-      
-    </table> 
-  
+    </table>  
   <% end %>
 </div>
 
