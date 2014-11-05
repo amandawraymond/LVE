@@ -1,0 +1,19 @@
+<table >
+  <br/><% @concerts.each do |event| %> 
+    <tr><h2><%= event["artists"]["headliner"] %></h2></tr>
+    <br/>
+    <tr><%= show_date(event) %></tr><br/></br>
+    @ <tr><%= event["venue"]["name"] %><br/>
+    in <%= event["venue"]["location"]["city"] %></tr><br/><br/>
+
+    Featuring:<br/>
+    <% Array(event["artists"]["artist"]).each do |artist| %>
+      <tr><%= artist %></tr><br/>
+    <% end %>
+
+    <br/>
+    <tr class="link"><%= link_to 'More info', event["url"] %></tr><br/><br/>
+    <tr class><%= add_to_concerts(event) %></tr><br/>
+    _____________________
+  <% end %>
+</table>  
