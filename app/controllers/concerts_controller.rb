@@ -19,11 +19,8 @@
   end
 
   def index
-    if params[:artist].blank? && params[:location].blank?
-      redirect_to new_concert_path
-    else
-      @concerts = Concert.criteria(params[:artist], params[:location])
-    end
+    @concerts = Concert.criteria(params[:artist], params[:location])
+    redirect_to new_concert_path if @concerts.nil?
   end
 
   def destroy

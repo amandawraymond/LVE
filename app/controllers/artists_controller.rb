@@ -6,12 +6,10 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @my_artists = current_user.artists
-    
+    @my_artists = current_user.artists  
   end
 
-  def create
-    
+  def create 
     @artist = current_user.artists.build(artist_params)
     if @artist.save
       redirect_to myartists_path, notice: "You have created an artist"
@@ -33,7 +31,6 @@ class ArtistsController < ApplicationController
     @artist.destroy
     redirect_to myartists_path, notice: "You have deleted a artist"
   end
-
 
   private
 

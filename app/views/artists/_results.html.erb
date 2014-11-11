@@ -1,0 +1,13 @@
+<h1><%= @artist["artist"]["name"] %></h1>
+<%= image_tag(@artist["artist"] ["image"][4]["#text"]) %><br/>
+<%= add_to_artists %>
+<h1>Similar Artists:</h1>
+<% if @artist["artist"]["similar"].include?("artist") %>
+  <% @artist["artist"]["similar"]["artist"].each do |artist| %>
+    <%= artist["name"] %><br/>
+  <% end %>
+<% else %>
+  <h1>Similar Artists: no similar artists listed at this moment.</h1>
+<% end %>
+<h1><%= @artist["artist"]["bio"]["summary"].html_safe %></h1>
+

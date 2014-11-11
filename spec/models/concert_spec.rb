@@ -2,7 +2,10 @@ require 'spec_helper'
 
 describe Concert do
   let(:user) {FactoryGirl.create(:user) }
-  before { @concert = user.concerts.create(performing_artists: "Radiohead, Cher") }
+  before do
+    User.destroy_all
+    @concert = user.concerts.create(performing_artists: "Radiohead, Cher")
+  end
 
   subject { @concert }
 

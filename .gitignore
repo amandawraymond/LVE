@@ -18,5 +18,6 @@
 
 #Ignore other uneeded files
 database.yml
+.DS_Store
 
-.DS_store
+  

@@ -1,36 +1,15 @@
-  <img src="http://i.imgur.com/x2G2aLn.jpg" id="bg-list">
-  <% provide(:title, "Search Results") %>
-  <div class="results"> 
-    <!-- h1>Artist Search Result</h1> -->
-    
-
-    <% if @artist.include?("error") %>
-      Sorry, there are no artists listed with that name. 
-      <br/><%= link_to "Search More Artists", new_artist_path  %>
-      <br/><%= link_to "Search Concerts for Similar Artists", new_concert_path  %>
-    <% else %>
-
-    <h1><%= @artist["artist"]["name"] %></h1>
-
-    <%= image_tag(@artist["artist"] ["image"][4]["#text"]) %><br/>
-     <% similar_name = @artist["artist"]["similar"].include?("artist") ? @artist["artist"]["similar"]["artist"][0]["name"] : " " %>
-    <%= link_to "Add to My Artists", artists_path(artist: { name: @artist["artist"]["name"], photo: @artist["artist"]["image"][3]["#text"], similar: similar_name } ), 
-        method: :post %>
-    <% if @artist["artist"]["similar"].include?("artist") %>
-      <h1>Similar Artists:</h1>
-
-      <% @artist["artist"]["similar"]["artist"].each do |artist| %>
-         <%= artist["name"] %><br/>
-      <% end %>
-    <% else %>
-      <h1>Similar Artists: no similar artists listed at this moment.</h1>
-    <% end %>
-    <h1><%= @artist["artist"]["bio"]["summary"].html_safe %></h1>
-
-    
-    <% end %>
-  </div>
+<img src="http://i.imgur.com/x2G2aLn.jpg" id="bg-list">
+<% provide(:title, "Search Results") %>
+<div class="results text-center"> 
+  <% unless @artist.include?("error") %>
+    <%= render 'results' %>
+  <% else %>
+    Sorry, there are no artists listed with that name.<br/> 
+    <%= link_to "Search More Artists", new_artist_path %><br/>
+    <%= link_to "Search Concerts for Similar Artists", new_concert_path %>
+  <% end %>
+</div>
 
 
 
-    
+  
