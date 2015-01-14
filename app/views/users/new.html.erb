@@ -1,8 +1,20 @@
-<img src="http://i.imgur.com/UMAjFiA.jpg?4" id="bg-static">
-<div>
-  <% provide(:title, "Sign Up") %>  
-  <div class="jumbotron text-center">
-    <h1 id="signup-title">Join</h1>
-    <%= render 'form' %>
+<div class="row text-center">
+  <img src="http://i.imgur.com/UMAjFiA.jpg?4" id="bg-static">
+    <% provide(:title, "Sign Up") %>  
+  <div class="col-sm-1">
+    <h1 class="sign-title join blink_me hidden-xs hidden-sm">Join</h1>
+    <h1 class="xs-sign-title visible-xs visible-sm">Join</h1>
+  </div>
+  <div class= "col-md-9 col-lg-8 text-center">
+    <div class="jumbotron">
+      <div class="user-form">
+        <%= render 'form' %>
+     </div>
+    </div>
   </div>
 </div>
+
+<p style="color:red" class="hidden-sm hidden-md hidden-lg">xs</p>
+<p style="color:red" class="hidden-xs hidden-md hidden-lg">sm</p>
+<p style="color:red" class="hidden-xs hidden-sm hidden-lg">md</p>
+<p style="color:red" class="hidden-xs hidden-md hidden-sm">lg</p>

@@ -1,20 +1,26 @@
-<img src="http://i.imgur.com/UMAjFiA.jpg?1" id="bg-static">
-<% provide(:title, "Sign In") %>
-<div class="jumbotron text-center">
-  <h1 id="signin-title">Come In</h1>
-  <div class="user-form">
-    <%= form_for(:session, url: sessions_path) do |form| %>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= form.label :email %>
-        <%= form.text_field :email %>
-      <br/>
-      <br/>
-        <%= form.label :password %>
-        <%= form.password_field :password %>
-      <br/>
-      <br/>
-      <div class="button">
-       <%= form.submit 'Enter' %>
+<div class="row text-center">
+  <img src="http://i.imgur.com/UMAjFiA.jpg?1" id="bg-static">
+  <% provide(:title, "Sign In") %>
+  <div class="col-sm-1">
+    <h1 class="sign-title enter blink_me hidden-xs">ENTER</h1>
+    <h1 class="xs-sign-title visible-xs">ENTER</h1>
+  </div>
+  <div class="col-md-9 col-lg-6 text-center">
+    <div class="jumbotron">
+      <div class="user-form">
+        <%= form_for(:session, url: sessions_path) do |form| %>
+          <%= form.label :email %>:<br/>
+          <%= form.text_field :email %>
+          <br/>
+          <br/>
+          <%= form.label :password %>:<br/>
+          <%= form.password_field :password %>
+          <br/>
+          <br/>
+          <%= form.submit 'Enter', class: "btn btn-primary" %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
+
