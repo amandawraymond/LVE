@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   match '/myconcerts', to: 'concerts#show',        via: 'get'
   match '/myartists',  to: 'artists#show',         via: 'get'
 
+
   
   resources :users,    only: [:create, :show]
   resources :artists,  only: [:new, :create, :index, :destroy]
