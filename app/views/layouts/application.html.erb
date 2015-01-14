@@ -12,14 +12,12 @@
     <%= render 'layouts/navigation' %>  
     </div>  
     <div class="container-fluid row">   
-      <div class="col-xs-12">
         <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>">
             <%= message %>
           </div>
         <% end %>
         <%= yield %>
-        <div>
           <%= render 'layouts/footer' %>  
         </div>
       </div>
