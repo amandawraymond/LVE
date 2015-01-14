@@ -5,16 +5,16 @@
     <h1 class="sign-title enter blink_me hidden-xs">ENTER</h1>
     <h1 class="xs-sign-title visible-xs">ENTER</h1>
   </div>
-  <div class="col-md-9 col-lg-6 text-center">
+  <div class="col-sm-12 col-md-9 col-lg-6 text-center">
     <div class="jumbotron">
       <div class="user-form">
         <%= form_for(:session, url: sessions_path) do |form| %>
           <%= form.label :email, class: "form" %>:<br/>
-          <%= form.text_field :email, class: "input" %>
+          <%= form.text_field :email, class: "input2" %>
             <br/>
             <br/>
           <%= form.label :password, class: "form" %>:<br/>
-          <%= form.password_field :password, class: "input" %>
+          <%= form.password_field :password, class: "input2" %>
           <br/>
           <br/>
           <%= form.submit 'Enter', class: "btn btn-primary" %>
