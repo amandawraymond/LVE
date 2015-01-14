@@ -9,11 +9,11 @@
     <div class="jumbotron">
       <div class="user-form">
         <%= form_for(:session, url: sessions_path) do |form| %>
-          <%= form.label :email %>:<br/>
+          <%= form.label :email, class: "form" %>:<br/>
           <%= form.text_field :email %>
           <br/>
           <br/>
-          <%= form.label :password %>:<br/>
+          <%= form.label :password, class: "form" %>:<br/>
           <%= form.password_field :password %>
           <br/>
           <br/>
