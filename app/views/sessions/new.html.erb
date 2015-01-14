@@ -10,11 +10,11 @@
       <div class="user-form">
         <%= form_for(:session, url: sessions_path) do |form| %>
           <%= form.label :email, class: "form" %>:<br/>
-          <%= form.text_field :email %>
+          <%= form.text_field :email, class: "input" %>
             <br/>
             <br/>
           <%= form.label :password, class: "form" %>:<br/>
-          <%= form.password_field :password %>
+          <%= form.password_field :password, class: "input" %>
           <br/>
           <br/>
           <%= form.submit 'Enter', class: "btn btn-primary" %>
