@@ -1,8 +1,6 @@
 <img src="http://i.imgur.com/x2G2aLn.jpg" id="bg-results">
 <% provide(:title, "Concert Results") %>
 <div class="results">
- <!--  <h1 class="concert-results">Concert Search Results</h1> -->
-
   <%if Array(@concerts).count == 0 %>
     Sorry, there are no concerts listed for that criteria at this moment.</br> Check back later.</br> </br>  
     <br/><%= link_to "Search More Concerts", new_concert_path  %> OR 
@@ -31,11 +29,12 @@
         performing_artists: event["artists"]["artist"].to_s, location: event["venue"]["location"]["city"], 
         venue: event["venue"]["name"], concert_date: event["startDate"].to_date, website: event["url"]  }), 
         method: :post %></tr>
-        <h1>________________________________________</h1>
-      <% end %>
-      
-    </table> 
-  
+        <h1 class="hidden-md hidden-sm hidden-xs">________________________________________</h1>
+        <h1 class="hidden-lg hidden-sm hidden-xs">_________________________</h1>
+        <h1 class="hidden-lg hidden-md">___________</h1>
+        <br/>
+      <% end %> 
+    </table>  
   <% end %>
 </div>
 

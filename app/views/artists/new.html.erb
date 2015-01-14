@@ -1,12 +1,9 @@
 <img src="http://i.imgur.com/zCJezhy.jpg?1" id="bg-search2">
   <% provide(:title) %>
-  <div class="jumbotron search2">
-    <!-- <h1>Search Artists</h > -->
+  <div class="jumbotron-artist text-center">
     <%= form_tag artists_path, :method => 'get' do %>
-      <div id="searchtag">artist:<br /></div>
+      <div class="search-tag">artist</div>
       <%= text_field_tag :artist, params[:artist] %><br /><br />
-      <div id="searchtag2">
-        <%= submit_tag "Search", :name => nil %>
-      </div>  
+      <%= submit_tag "Search", class: "btn-concert btn-primary" %>
     <% end %>
   </div>

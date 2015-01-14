@@ -1,23 +1,18 @@
-<img src='https://i.imgur.com/TtK2nMw.jpg?2' id="bg-search">
+<img class="hidden-xs visible-lg-md-sm" src='https://i.imgur.com/Iwi1Vuz.jpg?4' id="bg-search">
+<img class="visible-xs" src="http://i.imgur.com/iiUDpp6.jpg?2" id="bg-static">
 <% provide(:title) %>
 
 <div class="jumbotron search">
-<!-- <h1 id="concert-search-title">Concerts</h1> -->
-<div id="search-params">
-<%= form_tag concerts_path, :method => 'get' do %>
-  <div class="form-text">Concert Location:</div><br /><br />
-  <%= text_field_tag :location, params[:location] %>
- <br/><br/><br/>
-  <div class="form-text">& Artist:</div><br /><br />
-  <%= text_field_tag :artist, params[:artist] %><br /><br /><br /><br />
-  <%= submit_tag "Search", :name => nil %>
+  <div id="search-params">
+    <%= form_tag concerts_path, :method => 'get' do %>
+      <div class="form-text">Concert Location:</div>
+      <%= text_field_tag :location, params[:location] %>
+      <div class="form-text">& Artist:</div>
+      <%= text_field_tag :artist, params[:artist] %>
+      </br>
+      <%= submit_tag "Search", class: "btn-concert btn-primary" %> 
+    <% end %>
+  </div>
 </div>
-
-  
-  <%#= link_to "View My Concerts", myconcerts_path %>
-<% end %>
-</div>
-
-
 
 

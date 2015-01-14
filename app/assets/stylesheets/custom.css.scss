@@ -20,10 +20,10 @@ body {
 #amanda {
   text-decoration: none;
   color: gray;
+  padding-right: 1em;
 }
 
 /*home*/
-
 
 
 #lve {
@@ -99,21 +99,24 @@ body {
   background: transparent;
   font-family: 'Syncopate', sans-serif;
 }
+
 .user-form {
  font-family: 'Orbitron', sans-serif;  
  padding-left: 1em;
 }
+
 .form {
  color: #3275C1;
 }
+
 .input {
   max-width: 10em;
 }
 
-
 .input2 {
   max-width: 9em;
 }
+
 /*signup*/
 
 .xs-sign-title {
@@ -161,30 +164,42 @@ body {
   z-index: -1;
 }
 
+.btn-concert{
+  background: black;
+  color: #3275C1;
+  margin-top: 1em;
+} .btn-concert:hover {
+  background: black;
+  color: #3275C1;
+}
+
+
 .jumbotron.search {
- width: 100%;
-  padding-top: 7em;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 4em;
   font-size: 1em;
   height: 100%;
   background: transparent;
-  text-align:center;
+  text-align: center;
   size: 5em;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.5em;
 }
+
 #concert-search-title{
   text-align: center;
   color: #E9E9E9;
 }
+
 #search-params {
   text-align: center;
 }
+
 .form-text {
   color: #E9E9E9;
   font-size: 2em;
   text-align: center;
+  margin-bottom: .5em;
+  margin-top: .5em;
 }
 /*artist search*/
 
@@ -196,27 +211,18 @@ body {
   min-height: 100%;
   z-index: -1;
 }
-.jumbotron.search2 {
-  width: 100%;
-  padding-top: 7em;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1em;
-  height: 100%;
+.jumbotron-artist {
+  padding-top: 4em;
+  font-size: 2em;
   background: transparent;
-  text-align:center;
-  size: 5em;
   font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
 }
-#searchtag {
+.search-tag {
   color: black;
   font-size: 100px;
-  text-align: center;
 }
-#searchtag2 { 
-  text-align: center;
-}
+
+
 /*user page*/
 
 #bg-user {
@@ -227,14 +233,54 @@ body {
   min-height: 100%;
   z-index: -1;
 }
+.user-lve{
+  padding-top: .5em;
+}
 
-.header {
-  position: fixed;
+.user-header {
   color: white;
   font-size: 50px;
   font-family: 'Syncopate', sans-serif;
-  padding-top: 20px;
 }
+#quick-links {
+  padding-top: 8em;
+}
+#xs-quick-links {
+  padding-top: 2em;
+}
+
+.search-links {
+  color: #E9E9E9;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.btn-search {
+  background: black;
+  border: black;
+  color: white;
+  width: 10em;
+  padding: .2em;
+} .btn-search:hover {
+  background: black;
+  color: #3275C1;
+}
+
+.xs-btn-search {
+  background: black;
+  border: black;
+  color: white;
+  width: 6em;
+  padding: .2em;
+} .btn-search:hover {
+  background: black;
+  color: #3275C1;
+}
+
+
 /*index concerts*/
 #bg-results {
   position: fixed; 
@@ -245,12 +291,7 @@ body {
   z-index: -1;
 }
 .results {
-  width: 60%;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 16px;
-  height: 60%;
   background: transparent;
   size: 50px;
   font-family: 'Syncopate', sans-serif;
@@ -259,6 +300,16 @@ body {
   font-weight: 800px;
   text-align: center;
 }
+ .artist-results {
+   font-size: 16px;
+   background: transparent;
+   size: 50px;
+   font-family: 'Syncopate', sans-serif;
+   font-size: 20px;
+   color: white;
+   font-weight: 800px;
+   text-align: center;
+ }
 
 /*artist search results*/
 
@@ -272,9 +323,6 @@ body {
 }
 #saved-results {
   text-align: center;
-  margin-top: 60px;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 16px;
   background: transparent;
   size: 50px;
@@ -289,6 +337,7 @@ body {
   font-size: 50px;
   font-family: 'Orbitron', sans-serif;
 }
+
 
 .concert-name {
   font-size: 100px;

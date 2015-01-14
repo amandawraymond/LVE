@@ -1,8 +1,20 @@
-
-<div class="row">
-  <img src="http://i.imgur.com/WEPNSNd.jpg" id="bg-user">
-  <% provide(:title, @user.name) %>
-  <div>
-    <h1 class="header">Let's get LVE <%= @user.name %>...</h1>
+<img src="http://i.imgur.com/WEPNSNd.jpg" id="bg-user">
+<% provide(:title, @user.name) %>
+<div class="row user-lve">
+  <div class="col-xs-12">
+    <h1 class="user-header">Let's get LVE <span class="hidden-xs"><%= @user.name %></span>...</h1>
+  </div>
+  </br>
+  <div id="quick-links" class="col-xs-12 text-center hidden-xs">
+    <button class="btn-search btn-primary search-links"><%= link_to "Concerts", new_concert_path %> </button>
+    or
+    <button class="btn-search btn-primary search-links"><%= link_to "Artists", new_artist_path %></button>
+  </div>
+  <div id="xs-quick-links" class="col-xs-12 text-center visible-xs">
+    <button class="xs-btn-search btn-primary search-links"><%= link_to "Concerts", new_concert_path %> </button>
+    or
+    <button class="xs-btn-search btn-primary search-links"><%= link_to "Artists", new_artist_path %></button>
   </div>
 </div>
+
+
